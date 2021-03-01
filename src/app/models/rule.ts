@@ -1,3 +1,3 @@
 export interface Rule{
-    [key:string]:string[];
+    [key: string]: string[];
 }

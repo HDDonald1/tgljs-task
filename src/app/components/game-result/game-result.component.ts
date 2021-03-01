@@ -11,32 +11,32 @@ import { Subscription } from 'rxjs';
 })
 
 export class GameResultComponent implements OnInit {
-  @Input() sign:string;
-  @Input() playAgain:()=>void;
-  constructor(private signsService:SignsService , private scoreService:ScoreService) { }
-  public houseSign:string = 'unknown';
-  public isGameFinished:boolean = false;
-  public isPlayerWon:boolean = false;
-  public rules:Rule = {};
-  public signs:string[] = [];
-  private subscriptions:Subscription[]=[];
+  @Input() sign: string;
+  @Input() playAgain: () => void;
+  constructor(private signsService: SignsService , private scoreService: ScoreService) { }
+  public houseSign = 'unknown';
+  public isGameFinished = false;
+  public isPlayerWon = false;
+  public rules: Rule = {};
+  public signs: string[] = [];
+  private subscriptions: Subscription[] = [];
   ngOnInit(): void {
-    this.subscriptions.push(this.signsService.getRules().subscribe(v=>this.rules=v));
-    this.subscriptions.push(this.signsService.getSigns().subscribe(v=>this.signs=v));
+    this.subscriptions.push(this.signsService.getRules().subscribe(v => this.rules = v));
+    this.subscriptions.push(this.signsService.getSigns().subscribe(v => this.signs = v));
     this.play();
   }
-  ngOnDestroy():void{
-    for(let subscription of this.subscriptions){
+  ngOnDestroy(): void{
+    for (const subscription of this.subscriptions){
       subscription.unsubscribe();
     }
   }
-  play():void{
-    const randomNumber = Math.round(Math.random()*4);
-    setTimeout(()=>{this.houseSign = this.signs[randomNumber];
-    },1500)
-    setTimeout(()=>{
-      const isHouseWon = this.rules[this.houseSign].find((elem:any)=>elem===this.sign);
-      if(isHouseWon){
+  play(): void{
+    const randomNumber = Math.round(Math.random() * 4);
+    setTimeout(() => {this.houseSign = this.signs[randomNumber];
+    }, 1500);
+    setTimeout(() => {
+      const isHouseWon = this.rules[this.houseSign].find((elem: any) => elem === this.sign);
+      if (isHouseWon){
         this.isPlayerWon = false;
         this.scoreService.setScore(-1);
       }else{
@@ -44,6 +44,6 @@ export class GameResultComponent implements OnInit {
         this.scoreService.setScore(1);
       }
       this.isGameFinished = true;
-    },2000)
+    }, 2000);
   }
 }

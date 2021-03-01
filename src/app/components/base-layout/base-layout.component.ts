@@ -9,23 +9,22 @@ import { Subscription } from 'rxjs';
 })
 export class BaseLayoutComponent implements OnInit {
 
-  constructor(private scoreService:ScoreService) {}
-  public isModalShown:boolean = false;
-  public currentSign:string = '';
-  public isGameRunning:boolean = false;
-  toggleModal():void{
-    this.isModalShown=!this.isModalShown;
-    console.log(this.isModalShown)
+  constructor(private scoreService: ScoreService) {}
+  public isModalShown = false;
+  public currentSign = '';
+  public isGameRunning = false;
+  toggleModal(): void{
+    this.isModalShown = !this.isModalShown;
   }
   ngOnInit(): void {
   }
-  ngOnDestroy():void{
+  ngOnDestroy(): void{
   }
-  selectItem(value:string):void{
+  selectItem(value: string): void{
     this.currentSign = value;
     this.isGameRunning = true;
   }
-  replay():void{
-    this.isGameRunning=!this.isGameRunning;
+  replay(): void{
+    this.isGameRunning = !this.isGameRunning;
   }
 }

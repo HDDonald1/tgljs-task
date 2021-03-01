@@ -8,12 +8,12 @@ import { SignsService } from 'app/services/signs/signs.service';
 })
 export class TurnPickerComponent implements OnInit {
   @Output() onSelect: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private signsService:SignsService) { }
-  public signs:string[] = [];
+  constructor(private signsService: SignsService) { }
+  public signs: string[] = [];
   ngOnInit(): void {
-    this.signsService.getSigns().subscribe(v=>this.signs=v)
+    this.signsService.getSigns().subscribe(v => this.signs = v);
   }
-  pickSign(sign:string):void{
+  pickSign(sign: string): void{
     this.onSelect.emit(sign);
   }
 }

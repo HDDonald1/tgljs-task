@@ -8,5 +8,5 @@ import { Component, Input} from '@angular/core';
 export class HelpModalComponent {
 
   constructor() { }
-  @Input() close:()=>void;
+  @Input() close: () => void;
 }
