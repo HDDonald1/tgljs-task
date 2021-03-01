@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ScoreService } from 'app/services/score/score.service';
 import { Subscription } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './game-header.component.html',
   styleUrls: ['./game-header.component.scss']
 })
-export class GameHeaderComponent implements OnInit {
+export class GameHeaderComponent implements OnInit, OnDestroy {
   public score = 0;
   private eventSubscription: Subscription;
   public scoreDir = '';

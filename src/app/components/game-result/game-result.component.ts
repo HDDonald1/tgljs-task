@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Rule } from 'app/models/rule';
 import { ScoreService } from 'app/services/score/score.service';
 import { SignsService } from 'app/services/signs/signs.service';
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./game-result.component.scss']
 })
 
-export class GameResultComponent implements OnInit {
+export class GameResultComponent implements OnInit, OnDestroy {
   @Input() sign: string;
   @Input() playAgain: () => void;
   constructor(private signsService: SignsService , private scoreService: ScoreService) { }
