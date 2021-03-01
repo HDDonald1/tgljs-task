@@ -1,0 +1,14 @@
+<div class="gameResult">
+    <div class="gameResult__playerPicked">
+        <div class="gameResult__title">YOU PICKED</div>
+        <div class="gameResult__{{sign}} gameResult__ico"></div>
+    </div>
+    <div class="gameResult__result" *ngIf='isGameFinished'>
+        <div class="gameResult__text">YOU {{isPlayerWon?'WIN':'LOSE'}}</div>
+        <div class="gameResult__playButton"(click)='playAgain()'>PLAY AGAIN</div>
+    </div>
+    <div class="gameResult__housePicked">
+        <div class="gameResult__title">THE HOUSE PICKED</div>
+        <div class="gameResult__{{houseSign}} gameResult__ico"></div>
+    </div>
+</div>

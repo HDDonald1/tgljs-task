@@ -1,0 +1,221 @@
+.gameResult{
+    width: 100%;
+    max-width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+    padding: 10px 100px;
+    &__text{
+        font-size: 42px;
+    }
+    &__playButton{
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 28px;
+        background: rgb(255, 255, 255);
+        color: hsl(237, 49%, 15%);
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 2px solid rgb(255, 255, 255);
+        cursor: pointer;
+        &:hover{
+            color: #ffffff;
+            background: none;
+
+        }
+    }
+    &__playerPicked, &__housePicked{
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+    }
+    &__title{
+        text-align: center;
+        font-size: 24px;
+        margin-top: 40px;
+    }
+    &__ico{
+        cursor: pointer;
+        width: 12vw;
+        height: 12vw;
+        margin-top: 75px;
+        position: relative;
+        &:hover{
+            &::after{
+                background-color: rgb(241, 241, 241);
+            }
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: inset 0px 15px 2px -10px #CCC;
+        }
+        &::before{
+            position: absolute;
+            content: '';
+            width: 125%;
+            height: 125%;
+            border-radius: 50%;
+            z-index: 2;
+            transform: translate(-10%, -10%);
+            box-shadow: inset 0px -20px 1px -10px hsla(180, 3%, 15%, 0.322);
+        }
+    }
+    &__spock::after{
+        background: url('../../../assets/icons/icon-spock.svg') no-repeat center, #ffffff;
+    }
+    &__spock::before{
+        background: linear-gradient(hsl(189, 59%, 53%),hsl(189, 58%, 57%));
+    }
+    &__scissors::after{
+        background: url('../../../assets/icons/icon-scissors.svg') no-repeat center, #ffffff;
+    }
+    &__scissors::before{
+        background: linear-gradient(hsl(39, 89%, 49%) ,hsl(40, 84%, 53%));
+    }
+    &__paper::after{
+        background: url('../../../assets/icons/icon-paper.svg') no-repeat center, #ffffff;
+    }
+    &__paper::before{
+        background: linear-gradient(hsl(230, 89%, 62%),hsl(230, 89%, 65%));
+    }
+    &__lizard::after{
+        background: url('../../../assets/icons/icon-lizard.svg') no-repeat center, #ffffff;
+    }
+    &__lizard::after{
+        background: url('../../../assets/icons/icon-lizard.svg') no-repeat center, #ffffff;
+    }
+    &__lizard::before{
+        background: linear-gradient(hsl(261, 73%, 60%),hsl(261, 72%, 63%));
+    }
+    &__rock::after{
+        background: url('../../../assets/icons/icon-rock.svg') no-repeat center, #ffffff;
+    }
+    &__rock::before{
+        background:  linear-gradient(hsl(349, 71%, 52%),hsl(349, 70%, 56%)); 
+    }
+    &__unknown{
+        &::after{
+            content: none;
+            box-shadow:none;
+        }
+        &::before{
+            background: hsl(237, 49%, 15%);
+            box-shadow:none;
+        }
+    }
+}
+@media (max-width: 1200px){
+    .gameResult{
+        flex-wrap: wrap;
+        &__ico{
+            order: -1;
+        }
+        &__playerPicked{
+            order: 1;
+            width: 50%;
+            align-items: center;
+        }
+        &__housePicked{
+            order: 2;
+            width: 50%;
+            align-items: center;
+        }
+        &__result{
+            order: 3;
+            margin-top: 50px;
+        }
+    }
+}
+@media (max-width: 1000px){
+    .gameResult{
+        &__ico{
+            width: 14vw;
+            height: 14vw;
+            &::after{
+                background-size:7vw;
+            }
+            &::before{
+                box-shadow: inset 0px -18px 1px -10px hsla(180, 3%, 15%, 0.322); 
+            }
+        }
+    }
+}
+@media (max-width: 900px){
+    .gameResult{
+        &__text{
+            font-size: 34px;
+            text-align: center;
+        }
+        &__ico{
+            &::after{
+                background-size:6.5vw;
+            }
+        }
+    }
+}
+@media (max-width: 750px){
+    .gameResult{
+        &__ico{
+            width: 16vw;
+            height: 16vw;
+        }
+        &__title{
+            font-size: 18px;
+        }
+        &__text{
+            font-size: 28px;
+            text-align: center;
+        }
+        &__playButton{
+            font-size: 14px;
+        }
+        &__ico{
+            &::after{
+                background-size:6.5vw;
+            }
+        }
+    }
+}
+@media (max-width:600px){
+    .gameResult{
+        &__ico{
+            width: 18vw;
+            height: 18vw;
+        }
+        &__title{
+            font-size: 16px;
+        }
+        &__text{
+            font-size: 24px;
+            text-align: center;
+        }
+        &__playButton{
+            font-size: 12px;
+        }
+    }
+}
+@media (max-width:480px){
+    .gameResult{
+        &__ico{
+            width: 18vw;
+            height: 18vw;
+        }
+        &__title{
+            font-size: 16px;
+        }
+        &__text{
+            font-size: 24px;
+            text-align: center;
+        }
+        &__playButton{
+            font-size: 12px;
+        }
+    }
+}

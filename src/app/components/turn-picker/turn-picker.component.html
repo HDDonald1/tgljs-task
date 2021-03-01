@@ -1,0 +1,23 @@
+<section class="turnPicker">
+    <div class="turnPicker__wrapper">
+        <div class="turnPicker__picker">
+            <div class="turnPicker__line-1">
+                <!--it might be better to split the signs into components-->
+                <div class="turnPicker__scissors turnPicker__ico" (click)="pickSign('scissors')">
+                </div>
+            </div>
+            <div class="turnPicker__line-2">
+                <div class="turnPicker__spock turnPicker__ico" (click)="pickSign('spock')">
+                </div>
+                <div class="turnPicker__paper turnPicker__ico" (click)="pickSign('paper')">
+                </div>
+            </div>
+            <div class="turnPicker__line-3">
+                <div class="turnPicker__lizard turnPicker__ico" (click)="pickSign('lizard')">
+                </div>
+                <div class="turnPicker__rock turnPicker__ico" (click)="pickSign('rock')">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

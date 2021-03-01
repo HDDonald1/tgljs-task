@@ -1,0 +1,7 @@
+<app-game-header></app-game-header>
+<app-turn-picker *ngIf='!isGameRunning; else results' (onSelect)='selectItem($event)'></app-turn-picker>
+<ng-template #results>
+    <app-game-result [sign]='currentSign'  [playAgain]='replay.bind(this)'></app-game-result>
+</ng-template>
+<span class="rulesBtn" (click)="toggleModal()">RULES</span>
+<app-help-modal *ngIf='isModalShown' [close]='toggleModal.bind(this)'></app-help-modal>
