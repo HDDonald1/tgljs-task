@@ -25,7 +25,7 @@ export class GameHeaderComponent implements OnInit {
       this.score=score
     });
   }
-  ngOnDestroy() {
+  ngOnDestroy(): void{
     this.eventSubscription.unsubscribe();
   }
 

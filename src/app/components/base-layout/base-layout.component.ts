@@ -13,15 +13,15 @@ export class BaseLayoutComponent implements OnInit {
   public isModalShown:boolean = false;
   public currentSign:string = '';
   public isGameRunning:boolean = false;
-  toggleModal(){
+  toggleModal():void{
     this.isModalShown=!this.isModalShown;
     console.log(this.isModalShown)
   }
   ngOnInit(): void {
   }
-  ngOnDestroy() {
+  ngOnDestroy():void{
   }
-  selectItem(value:string){
+  selectItem(value:string):void{
     this.currentSign = value;
     this.isGameRunning = true;
   }
